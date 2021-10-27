@@ -22,7 +22,6 @@ public class HomePage {
 
 	public void setSearchInput(String text) {
 		this.searchInput.sendKeys(text);
-		
 	}
 	
 	public void doSearch() {

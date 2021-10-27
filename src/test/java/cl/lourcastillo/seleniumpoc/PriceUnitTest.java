@@ -1,13 +1,14 @@
 package cl.lourcastillo.seleniumpoc;
 
+import static org.junit.Assert.assertNotNull;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import cl.lourcastiilo.seleniumpoc.pages.HomePage;
+import cl.lourcastiilo.seleniumpoc.pages.SearchPage;
 
 public class PriceUnitTest {
 	
@@ -32,6 +33,14 @@ public class PriceUnitTest {
 		HomePage home = new HomePage(driver);
 		home.setSearchInput("pintura blanca");
 		home.doSearch();
+		
+		SearchPage search = new SearchPage(driver);
+		String valor1 = search.getFirstPrice().getText();
+		
+		assertNotNull("El precio del producto no existe", valor1);
+		
+		//search.getFirstElement().click();
+		
 	}
 
 }
