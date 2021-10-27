@@ -26,8 +26,8 @@ public class SearchPage {
 		this.firstElement = firstElement;
 	}
 
-	public WebElement getFirstPrice() {
-		return firstPrice;
+	public String getFirstPrice() {
+		return firstPrice.getText();
 	}
 
 	public void setFirstPrice(WebElement firstPrice) {
