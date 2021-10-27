@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import cl.lourcastiilo.seleniumpoc.pages.HomePage;
+
 public class PriceUnitTest {
 	
 	private WebDriver driver;
@@ -21,13 +23,15 @@ public class PriceUnitTest {
 
 	@After
 	public void tearDown() {
-		driver.quit();
+		//driver.quit();
 	}
 	
 	@Test
 	public void validatePrice() {
 		driver.get("https://www.sodimac.cl/sodimac-cl/");
-		
+		HomePage home = new HomePage(driver);
+		home.setSearchInput("pintura blanca");
+		home.doSearch();
 	}
 
 }
